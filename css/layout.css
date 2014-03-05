@@ -2,10 +2,11 @@ body
 {
     margin:auto;
     text-align:center;
-    	font-weight: 300;
+    font-weight: 300;
 	font-family: 'Oswald',sans-serif;
     letter-spacing: 10px;
     background-color:transparent;
+    /*background-image: url('../img/rede.png');*/
 }
 
 button {
@@ -41,7 +42,7 @@ button {
     width:620px;
     height:200px;
     -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0px) rotateX(0deg);
+    -webkit-transform: translateZ(0px) rotateX(0deg) rotateY(0deg); rotateZ(0deg);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -113,3 +114,13 @@ h3 {font-size: 22px; line-height: 1; color: #555;}
              0px 18px 23px rgba(0,0,0,0.1);*/
 }
 
+
+.square {
+    width:80px;
+    height: 80px;
+    border: 20px solid #000;
+    margin-right: 40px;
+    float:right;
+    background-image: url('../img/rede.png');
+    -webkit-transform: translateZ(0px) rotateX(0deg) rotateZ(45deg);
+}
