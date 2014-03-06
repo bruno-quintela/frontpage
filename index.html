@@ -16,34 +16,53 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/cube.css">
+         <link rel="stylesheet" href="css/logoTransform.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <!--div id="nav">
-            <button id="zoomToLayer1">layer 1</button>
-            <button id="zoomToLayer2">layer 2</button>
-            <button id="zoomToLayer3">layer 3</button>
-            <button id="togglePerspective">perspective</button>
-        </div-->
+        <button id="toggle">toggle view</button>
+        <button id="rotateLeft">rotate left</button>
+        <button id="rotateRight">rotate right</button>
         <div class="perspective-container">
            
 			<div class="layers">
-                <div class="logo"><div class="square"></div></div>
+                <div class="logo">
+                    <div class="ms-wrapper ms-effect-3">
+                        <div class="ms-perspective">
+                            <div class="square">
+                                
+                                <div class="ms-device">
+                                    <div class="ms-screens">
+                                        <a class="ms-screen-1 "><div class="ms-label ms-label-1">Calendar</div></a>
+                                        <a class="ms-screen-2 "><div class="ms-label ms-label-2">Compose</div></a>
+                                        <a class="ms-screen-3 "><div class="ms-label ms-label-3">Accounts</div></a>
+                                    </div>
+                                </div><!-- /ms-device -->
+                            </div><!-- /ms-perspective -->
+                        </div><!-- /ms-wrapper -->
+                        <!--div id="container">
+                          <div id="cube" class="animate">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                        </div-->
+                    </div><!-- /Square -->
+                </div><!-- /logo -->
                 <div class="largeBold mainTitle">
                     <div class="small minorTitle">bruno</div> 
                     QUiNT3LA
                 </div>
-                <p class="captionTitle">Front end Developer</p>
-                
-                <!--div class="layer-1"></div>	
-                <div class="layer-2"></div>
-                <div class="layer-3"></div-->
+                <p class="captionTitle">Front end Developer / Web Designer </p>
 			</div><!-- /ms-layer -->
+            
 		</div><!-- /perspective-container -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

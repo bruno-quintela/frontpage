@@ -1,0 +1,290 @@
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ms-perspective {
+    position: relative;
+    margin: 0px auto;
+
+}
+
+.ms-device {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.7s ease-in-out;
+    -moz-transition: -moz-transform 0.7s ease-in-out;
+    transition: transform 0.7s ease-in-out;
+}
+
+
+.ms-device,
+.ms-object,
+.ms-object > div,
+.ms-screens a {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* Screens */
+
+.ms-screens a
+{
+    border: 3px solid black;
+}
+
+.ms-screen-1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 1, 1, 1);
+ }
+
+.ms-screen-2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(1, 255, 1, 1);
+ }
+
+.ms-screen-3 {
+    width: 100px;
+    height: 50px;
+    background-color: rgba(1, 255, 255, 1);
+ }
+
+.ms-screens a {
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.ms-screens > a {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.7s, opacity 0.4s;
+    transition: -moz-transform 0.7s, opacity 0.4s;
+    transition: transform 0.7s, opacity 0.4s;
+
+}
+
+.ms-screens > a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+}
+
+.ms-label {
+    border: 3px solid #fff;
+    color: #fff;
+    position: absolute;
+    left: 100%;
+    margin-left: 18px;
+    width: 200px;
+    padding: 10px;
+    opacity: 0;
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
+    -moz-transition: opacity 0.7s, -moz-transform 0.7s;
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.ms-label::after {
+    right: 100%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-right-color: #d9382e;
+    border-width: 16px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.ms-label::after,
+.ms-label::before {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ms-label::after {
+    border-color: transparent;
+    border-right-color: #313740;
+    border-width: 12px;
+    top: 50%;
+    margin-top: -12px;
+}
+
+.ms-label::before {
+    border-color: transparent;
+    border-right-color: #fff;
+    border-width: 16px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.ms-screens > a:hover .ms-label::before {
+    border-right-color: #687fa7
+}
+
+
+
+/* class applied to rotate phone (common effects) */
+.ms-view-layers .ms-screens .ms-screen-1 {
+    -webkit-transform: translateZ(30px);
+    -webkit-transition-delay: 1s;
+    opacity: 0.3;
+}
+
+.ms-view-layers .ms-screens .ms-screen-2 {
+    -webkit-transform: translateZ(60px);
+    -webkit-transition-delay: 2s;
+    opacity: 0.3;
+}
+
+.ms-view-layers .ms-screens .ms-screen-3 {
+    -webkit-transform: translateZ(90px);
+    -webkit-transition-delay: 3s;
+    opacity: 0.3;
+}
+
+.ms-view-layers .ms-screens > a:hover::after {
+    opacity: 1;
+}
+
+.ms-view-layers .ms-label {
+    opacity: 1;
+    -webkit-transform: rotateX(-90deg);
+}
+
+.ms-view-layers .ms-screen-1 .ms-label {
+    -webkit-transition-delay: 1.5s;
+}
+
+.ms-view-layers .ms-screen-2 .ms-label {
+    -webkit-transition-delay: 2.5s;
+}
+
+.ms-view-layers .ms-screen-3 .ms-label {
+    -webkit-transition-delay: 3.5s;
+}
+
+
+/* Effect*/
+.ms-wrapper .ms-view-layers .ms-device {
+    -webkit-transform: rotateX(30deg) translateZ(0px);
+}
+
+
+
+@media screen and (max-width: 560px) { 
+  .ms-wrapper button {
+      position: relative;
+      margin: 0 auto;
+      left: auto;
+      top: auto;
+      display: block;
+      margin-bottom: 30px;
+  }
+}
+
+
+   .portfolio-anim-simulate {
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:701;
+        width:100%;
+        height:1px;
+        background:transparent;
+        border:1px solid #fff;
+        visibility:hidden
+    }
+
+@-webkit-keyframes showPortfolio {
+        0% {
+            visibility:visible;
+            -webkit-transform:translate3d(-120%, 0, 0);
+            height:1px
+        }
+        50% {
+            -webkit-transform:translate3d(0, 0, 0);
+            height:1px
+        }
+        100% {
+            height:100%;
+            visibility:visible
+        }
+    }
+    @-moz-keyframes showPortfolio {
+        0% {
+            visibility:visible;
+            -moz-transform:translate3d(-120%, 0, 0);
+            height:1px
+        }
+        50% {
+            -moz-transform:translate3d(0, 0, 0);
+            height:1px
+        }
+        100% {
+            height:100%;
+            visibility:visible
+        }
+    }
+    @-ms-keyframes showPortfolio {
+        0% {
+            visibility:visible;
+            -ms-transform:translate3d(-120%, 0, 0);
+            height:1px
+        }
+        50% {
+            -ms-transform:translate3d(0, 0, 0);
+            height:1px
+        }
+        100% {
+            height:100%;
+            visibility:visible
+        }
+    }
+    @keyframes showPortfolio {
+        0% {
+            visibility:visible;
+            transform:translate3d(-120%, 0, 0);
+            height:1px
+        }
+        50% {
+            transform:translate3d(0, 0, 0);
+            height:1px
+        }
+        100% {
+            height:100%;
+            visibility:visible
+        }
+    }
+    .animate-showPortfolio {
+        -webkit-animation:showPortfolio 1s linear 1 forwards;
+        -moz-animation:showPortfolio 1s linear 1 forwards;
+        -ms-animation:showPortfolio 1s linear 1 forwards;
+        animation:showPortfolio 1s linear 1 forwards
+    }

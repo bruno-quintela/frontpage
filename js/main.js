@@ -1,38 +1,47 @@
 var open = false;
 
 var dof = (function() {
+	 var open = false;
+    var defaultRotation = -40;
 	function init() {
         
-         $("#togglePerspective").click(function(){
-            if (!open)
-                $(".layers").css('-webkit-transform','rotateY(50deg) rotateX(90deg) translateZ(-97px)');
-             else
-                 $(".layers").css('-webkit-transform','');
-            open= !open;
+        $("#toggle").click(function(){
+           changePerspective()
+           open = !open;
         })
         
-        $("#zoomToLayer1").click(function(){
-            $('.layer-1').css('-webkit-transform', 'translateZ(0px)');
-            $('.layer-2').css('-webkit-transform', 'translateZ(-1000px)');
-            $('.layer-3').css('-webkit-transform', 'translateZ(-5000px)');
+        $("#rotateRight").click(function(){
+           rotatePerspective(90)
+           setTimeout(function(){$(".portfolio-anim-simulate").addClass("animate-showPortfolio")},200);
         })
         
-        $("#zoomToLayer2").click(function(){
-            $('.layer-1').css('-webkit-transform', 'translateZ(1000px)');
-            $('.layer-2').css('-webkit-transform', 'translateZ(0px)');
-            $('.layer-3').css('-webkit-transform', 'translateZ(-1000px)');
+        $("#rotateLeft").click(function(){
+           rotatePerspective(-90)
         })
         
-        $("#zoomToLayer3").click(function(){
-            $('.layer-1').css('-webkit-transform', 'translateZ(5000px)');
-            $('.layer-2').css('-webkit-transform', 'translateZ(1000px)');
-            $('.layer-3').css('-webkit-transform', 'translateZ(0px)');
+        $('.ms-label-1').click(function(){
+            $('.ms-screen-1').css('-webkit-transform','rotateX(90deg) translateZ(-350px)');
         })
         
+        function changePerspective()
+        {
+            if( !open ) {
+                $(".ms-perspective").addClass('ms-view-layers');
+            }
+            else
+            {
+                $(".ms-perspective").removeClass('ms-view-layers');
+                $(".ms-device").css('-webkit-transform','');
+            }
+        }
+        
+        function rotatePerspective(angleY)
+        {
+            defaultRotation += angleY;
+            $(".ms-device").css('-webkit-transform','rotateY('+defaultRotation+'deg) rotateX(90deg) translateZ(-15px) translateZ(-97px)');
+        }
 	}
     
-    
-
-	init();
+    init();
 
 })();
