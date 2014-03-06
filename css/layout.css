@@ -121,6 +121,6 @@ h3 {font-size: 22px; line-height: 1; color: #555;}
     border: 20px solid #000;
     margin-right: 40px;
     float:right;
-    background-image: url('../img/rede.png');
+
     -webkit-transform: translateZ(0px) rotateX(0deg) rotateZ(45deg);
 }
