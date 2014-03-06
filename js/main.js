@@ -19,19 +19,14 @@ var dof = (function() {
            rotatePerspective(-90)
         })
         
-        $('.ms-label-1').click(function(){
-            $('.ms-screen-1').css('-webkit-transform','rotateX(90deg) translateZ(-350px)');
-        })
-        
         function changePerspective()
         {
             if( !open ) {
-                $(".ms-perspective").addClass('ms-view-layers');
+                $(".logo").addClass('ms-view-layers');
             }
             else
             {
-                $(".ms-perspective").removeClass('ms-view-layers');
-                $(".ms-device").css('-webkit-transform','');
+                $(".logo").removeClass('ms-view-layers');
             }
         }
         
